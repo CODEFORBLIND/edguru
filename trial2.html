@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://lottie.host/785010ec-c50a-4459-97da-683665dcb301/S54yFQjHoq.json">
+    <title>Interest Analysis</title>
+</head>
+<style>
+    :root {
+	--card-height: 40vw;
+	--card-margin: 4vw;
+	--card-top-offset: 1em;
+	--numcards: 4;
+	--outline-width: 0px;
+}
+body{
+  overflow-x: hidden ;
+}
+
+#cards {
+	padding-bottom: calc(var(--numcards) * var(--card-top-offset)); /* Make place at bottom, as items will slide to that position*/
+	margin-bottom: var(--card-margin); /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
+}
+
+#card_1 {
+	--index: 1;
+}
+
+#card_2 {
+	--index: 2;
+}
+
+#card_3 {
+	--index: 3;
+}
+
+#card_4 {
+	--index: 4;
+}
+
+#card_5 {
+	--index: 5;
+}
+
+.card {
+	position: sticky;
+	top: 0;
+	padding-top: calc(var(--index) * var(--card-top-offset));
+}
+
+@supports (animation-timeline: works) {
+
+	@scroll-timeline cards-element-scrolls-in-body {
+		source: selector(body);
+		scroll-offsets:
+			/* Start when the start edge touches the top of the scrollport */
+			selector(#cards) start 1,
+			/* End when the start edge touches the start of the scrollport */
+			selector(#cards) start 0
+		;
+		start: selector(#cards) start 1; /* Start when the start edge touches the top of the scrollport */
+		end: selector(#cards) start 0; /* End when the start edge touches the start of the scrollport */
+		time-range: 4s;
+	}
+
+	.card {
+		--index0: calc(var(--index) - 1); /* 0-based index */
+		--reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+		--reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+	}
+	
+	.card__content {
+		transform-origin: 50% 0%;
+		will-change: transform;
+
+		--duration: calc(var(--reverse-index0) * 1s);
+		--delay: calc(var(--index0) * 1s);
+
+		animation: var(--duration) linear scale var(--delay) forwards;
+		animation-timeline: cards-element-scrolls-in-body;
+	}
+
+	@keyframes scale {
+		to {
+			transform:
+				scale(calc(
+					1.1
+					-
+					calc(0.1 * var(--reverse-index))
+				));
+		}
+	}
+}
+
+
+/** PAGE STYLING **/
+
+* { /* Poor Man's Reset */
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #EFEAE3;
+	color: #000;
+	text-align: center;
+
+	font-size: calc(1em + 0.5vw);
+}
+
+header,
+main {
+	width: 80vw;
+	margin: 0 auto;
+}
+
+header {
+	height: 80vh;
+	display: grid;
+	place-items: center;
+	/* background-color: red; */
+	width: 100%;
+}
+
+#cards {
+	list-style: none;
+	outline: calc(var(--outline-width) * 10) solid blue;
+	
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(var(--numcards), var(--card-height));
+	gap: var(--card-margin);
+}
+
+.card {
+	outline: var(--outline-width) solid hotpink;
+}
+
+.card__content {
+	box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+  
+	background: #ffffff;
+	color: rgb(10, 5, 7);
+	border-radius: 1em;
+	overflow: hidden;
+
+	display: grid;
+	grid-template-areas: "text img";
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+
+	align-items: stretch;
+	outline: var(--outline-width) solid lime;
+}
+
+.card__content > div {
+	grid-area: text;
+	width: 80%;
+	place-self: center;
+	text-align: left;
+
+	display: grid;
+	gap: 1em;
+	place-items: start;
+}
+
+.card__content > figure {
+	grid-area: img;
+	overflow: hidden;
+}
+
+.card__content > figure > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+h1 {
+	font-weight: 300;
+	font-size: 3.5em;
+}
+
+
+p {
+	font-family: sans-serif;
+	font-weight: 300;
+	line-height: 1.42;
+}
+
+
+#nav-part2 h4 {
+  padding: 10px 20px;
+  border: 1px solid #0000003c;
+  border-radius: 50px;
+  font-weight: 500;
+  color: #000000bb;
+  transition: all ease 0.4s;
+  position: relative;
+  font-size: 18px;
+  overflow: hidden;
+  padding: 15px 32px;
+}
+
+#nav-part2 h4::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  left: 0;
+  bottom: -100%;
+  border-radius: 50%;
+  transition: all ease 0.4s;
+}
+
+#nav-part2 h4:hover::after {
+  bottom: 0;
+  border-radius: 0;
+}
+
+#nav-part2 h4 a {
+  color: #000000bb;
+  text-decoration: none;
+  position: relative;
+  z-index: 9;
+  font-size: 1.8vw;
+}
+
+#nav-part2 h4:hover a {
+  color: #fff;
+}
+
+h2 {
+	font-weight: 600;
+	font-size: 2.5em;
+	padding-bottom: 2vw;
+}
+
+#courseSuggestion{
+	padding: 4vw;
+}
+
+#interestana{
+  background-color: #EFEAE3;
+  width: 100%;
+  height: 70vh;
+	display:flex;
+  
+  justify-content: center;
+	gap: 2vw;
+	align-items: center;
+	/* padding-left: 7vw; */
+}
+
+
+
+.mouseroll{
+	margin-left: 10vw;
+}
+
+</style>
+<body>
+
+<header>
+	<div id ="interestana" style="overflow-y: hidden;">
+    <h1>Interest Analysis</h1>
+    <div id="robot">
+      <script src="//my.visme.co/visme-embed.js"></script><div class="visme_d" data-title="New project" data-url="q6p1j4ge-new-project" data-w="200" data-full-h="false" data-h="300" data-domain="my"></div><p style="width:223px !important;border-radius:3px !important;padding:3px !important;font-size:12px !important;font-family:Arial, sans-serif !important;color:#314152 !important;white-space:nowrap !important"></p>
+    <div style="width: 13.75vw; height: 3vw; background-color: #EFEAE3; position: absolute; top: 57.75vh; right: 20.75%;"></div>
+		
+	</div>
+</header>
+<main>
+	<ul id="cards">
+		<li class="card" id="card_1">
+			<div class="card__content">
+				<div>
+					<form id="interestForm">
+            <label for="question1">1.I prefer to spend time thinking about...</label><br>
+            <input type="radio" id="q1a" name="question1" value="a">
+            <label for="q1a">a) Designing user interfaces, enhancing user experience, and optimizing website/app performance.</label><br>
+            <input type="radio" id="q1b" name="question1" value="b">
+            <label for="q1b">b)Architecting robust server side systems, implementing APIs.</label><br>
+            <input type="radio" id="q1c" name="question1" value="c">
+            <label for="q1c">c)Structuring data efficiently, optimizing database queries, and ensuring data integrity.</label><br>
+            <input type="radio" id="q1d" name="question1" value="d">
+            <label for="q1d">d)Analyzing large datasets, building predictive models, and extracting valuable insights from data.</label><br><br>
+            </form>
+				</div>
+				<figure>
+					<iframe src="https://lottie.host/embed/135c4b74-1cfb-4578-8298-1848dc896a13/kZinD7Wvw2.json" style="border: none; height: 25vw; width: 25vw;"></iframe>
+				</figure>
+			</div>
+		</li>
+		<li class="card" id="card_2">
+			<div class="card__content">
+				<div>
+					<form id="interestForm"> <label for="question2">2. What do you find most appealing about websites?</label><br>
+            <input type="radio" id="q2a" name="question2" value="a">
+            <label for="q2a">a) Their visual appeal and aesthetics</label><br>
+            <input type="radio" id="q2b" name="question2" value="b">
+            <label for="q2b">b) Their ability to perform different functions and tasks</label><br>
+            <input type="radio" id="q2c" name="question2" value="c">
+            <label for="q2c">c) The way they handle and manage information</label><br>
+            <input type="radio" id="q2d" name="question2" value="d">
+            <label for="q2d">d)  Uncovering insights from data, building powerful models, and driving innovation.</label><br><br>
+            </form>
+				</div>
+				<figure>
+					<iframe src="https://lottie.host/embed/03e37b13-99fd-447a-899e-e4573346e69f/oXkpsrBIV5.json" style="border: none; height: 25vw; width: 25vw;" frameborder="0"></iframe>
+				</figure>
+			</div>
+		</li>
+		<li class="card" id="card_3">
+			<div class="card__content">
+				<div>
+					<form id="interestForm"><label for="question3">3.Which role resonates most with you?</label><br>
+            <input type="radio" id="q3a" name="question3" value="a">
+            <label for="q3a">a)Designing the sleek layout of a recipe app.</label><br>
+            <input type="radio" id="q3b" name="question3" value="b">
+            <label for="q3b">b) Handling the behind the scenes magic of an online shopping platform</label><br>
+            <input type="radio" id="q3c" name="question3" value="c">
+            <label for="q3c">c) Organizing your collection of music playlists.</label><br>
+            <input type="radio" id="q3d" name="question3" value="d">
+            <label for="q3d">d)Analyzing your fitness tracker data to uncover trends in your workouts.</label><br><br></form>
+				</div>
+				<figure>
+					<iframe src="https://lottie.host/embed/aaf35eb8-216c-44f6-b1c6-e0260a8be8e3/Ju5uS9YHV3.json" style="border: none; height: 25vw; width: 25vw;" frameborder="0"></iframe>
+				</figure>
+			</div>
+		</li>
+		<li class="card" id="card_4">
+			<div class="card__content">
+				<div>
+					<form id="interestForm"><label for="question4">4.When I see a painting I...</label><br>
+            <input type="radio" id="q4a" name="question4" value="a">
+            <label for="q4a">a) Admire it for its beauty.</label><br>
+            <input type="radio" id="q4b" name="question4" value="b">
+            <label for="q4b">b) Consider what makes this painting popular and important.</label><br>
+            <input type="radio" id="q4c" name="question4" value="c">
+            <label for="q4c">c)Wonder what techniques a painter used to paint it.</label><br>
+            <input type="radio" id="q4d" name="question4" value="d">
+            <label for="q4d">d) Deconstruct the painting's elements for data insights.</label><br><br></form>
+				</div>
+				<figure>
+					<iframe src="https://lottie.host/embed/f7ec3643-ec5c-41a5-b6f5-7a3ae2ca22cb/hfPx0JT4bB.json" style="border: none; height: 25vw; width: 25vw;" frameborder="0"></iframe>
+				</figure>
+			</div>
+		</li>
+        <li class="card" id="card_5">
+			<div class="card__content">
+				<div>
+					<form id="interestForm"> <label for="question5">5. What tech aspect excites you most?</label><br>
+            <input type="radio" id="q5a" name="question5" value="a">
+            <label for="q5a">a)  Designing a user-friendly fitness app for tracking workouts and progress.</label><br>
+            <input type="radio" id="q5b" name="question5" value="b">
+            <label for="q5b">b) Building a robust system for a video conferencing platform.</label><br>
+            <input type="radio" id="q5c" name="question5" value="c">
+            <label for="q5c">c) Structuring data for a photo gallery app, enabling quick access to images.</label><br>
+            <input type="radio" id="q5d" name="question5" value="d">
+            <label for="q5d">d) Mining data to predict traffic patterns, facilitating efficient commute planning.</label><br><br></form>
+           
+        </form>
+				</div>
+				<figure>
+					<iframe src="https://lottie.host/embed/3044870b-6d89-41ba-bb1c-778cc6f6d5e8/QcJpGXuTWu.json" style="border: none; height: 25vw; width: 25vw;" frameborder="0"></iframe>
+				</figure>
+			</div>
+		</li>
+	</ul>
+	<div id="nav-part2">
+        <h4><a href="#" onclick="analyzeInterest()">Submit</a></h4>
+	</div>
+    <div id="courseSuggestion"></div>
+
+	<iframe src="https://lottie.host/embed/e31c5c56-da20-447a-85de-2f3fe76e1875/QawjCU1LH3.json" style="border: none; width: 1000px;"></iframe>
+</main>
+
+</body>
+<script>
+    import { showDialog } from 'https://codepen.io/bramus/pen/ZEqMOLz/cccfe67c2b9cdfbeb5fb59083dbd0a64.js';
+showDialog('https://scroll-driven-animations.style/demos/stacking-cards/css/');</script>
+
+<script>
+        function analyzeInterest() {
+            // Getting the values of radio inputs using their names
+            var question1 = document.querySelector('input[name="question1"]:checked').value;
+            var question2 = document.querySelector('input[name="question2"]:checked').value;
+            var question3 = document.querySelector('input[name="question3"]:checked').value;
+            var question4 = document.querySelector('input[name="question4"]:checked').value;
+            var question5 = document.querySelector('input[name="question5"]:checked').value;
+
+            var suggestion = "";
+
+            // Comparing the values of radio inputs with correct strings
+            if (question1 === "a" && question2 === "a" && question3 === "a" && question4 === "a" && question5 === "a") {
+                suggestion = "Consider taking our course on Front-End Development!";
+            } else if (question1 === "b" && question2 === "b" && question3 === "b" && question4 === "b" && question5 === "b") {
+                suggestion = "You might enjoy our Back-End Development!";
+            } else if (question1 === "c" && question2 === "c" && question3 === "c" && question4 === "c" && question5 === "c") {
+                suggestion = "You must check out our DataBase Courses!";
+            } else if (question1 === "d" && question2 === "d" && question3 === "d" && question4 === "d" && question5 === "d") {
+                suggestion = "Try out our Data Science Course!";
+            } else {
+                suggestion = "Based on your responses, we don't have a specific course to suggest at the moment.";
+            }
+
+            document.getElementById("courseSuggestion").innerHTML = "<h2>Course Suggestion:</h2><p>" + suggestion + "</p>";
+        }
+	</script>
+	
+</html>

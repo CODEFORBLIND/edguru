@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Creating Variables</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" href="../logooo .jpg"  type="image/gif" sizes="64x64">
+
+
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Acme&family=Anta&display=swap');
+    html,
+    body {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #333333;
+      font-size: 14px;
+      color: #000;
+      font-family: 'Acme', sans-serif;
+    }
+
+    .swiper {
+      width: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+    }
+
+    .navigation-bar {
+      font-size: 1.5vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 1.5vw;
+      box-sizing: border-box;
+      z-index: 1000; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+     
+    }
+    
+    .navigation-bar div {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    
+    .swiper-pagination {
+      position: absolute;
+      bottom: 50px;
+     
+      width: auto;
+      display: flex;
+      margin-top: 5vw;
+      padding: 0.25vw 0;
+
+    }
+
+    #myForm{
+      text-align: start;
+    
+      text-align: center;
+    }
+
+    .pbold{
+  font-weight: 800;
+  font-size: 2vw;
+}
+
+
+  </style>
+</head>
+
+<body>
+   
+  <div class="navigation-bar">
+    <div style="height: 2vw; width: 2vw; background-color: #333;"><a href="datacor.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></a></div>
+    <div>Creating Variables</div>
+    <div style="height: 2vw; width: 2vw; background-color: #333;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#ffffff" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></div>
+  </div>
+    
+
+ 
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+    
+      <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">
+          <p style="line-height: 3vw;">Python is a fantastic programming language for beginners and experts alike.</p>
+          <div class="img1"><img src="https://images.getmimo.com/images/fcd36c8d-09ad-46a8-bf55-75f337c661b6" alt=""  style="height: 20vw;"></div>
+          
+
+          </div>
+      </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+            <p>
+                It's the language of choice for many companies and a popular pick for personal projects. <br>
+                You can use it for automating tasks, getting ahead in work with data analysis, machine learning, and much more!
+            </p>
+            <div class="img1"><img src="https://images.getmimo.com/images/58e6b0f6-6a60-426b-a201-b381cec829f9" alt=""  style="height: 20vw;"></div>
+        </div>
+      
+      </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">
+          <p style="line-height: 3vw;">
+            No matter how complex a program is, it begins with a single line of code. This first line is usually a variable. <br><br>
+
+            Programs use variables to remember information. Like moving boxes, variables have content and names that tell us what's inside.
+            <div class="img1"><img src="https://images.getmimo.com/images/e050d9b9-b367-40c3-aaca-90c21a21a416" alt=""  style="height: 20vw;"></div>
+            </p>
+            
+          </div>
+        </div>
+        <div class="swiper-slide">
+            <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+                <p class="pbold">
+                    What do computers use variables for?
+                </p>
+                <form id="myForm2">
+                    <input type="radio" id="option2.1" name="options" value="option1">
+                    <label for="option1" style="padding: 0.5vw;">To remember information</label><br><br>
+                    <input type="radio" id="option2.2" name="options" value="option2">
+                    <label for="option2" style="padding: 1vw;">To draw images onscreen</label><br><br>
+                    
+                    
+                    <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                    <p id="suggestion2" class="suggestion2"></p>
+                </form>
+            
+                <script> 
+                 document.getElementById('myForm2').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                        var suggestion2 = document.getElementById('suggestion2');
+                        if (document.getElementById('option2.1').checked) {
+                            suggestion2.textContent = "Question solved. Great Job!";
+                        } else {
+                            suggestion2.textContent = 'Oops! Wrong answer.';
+                        }
+                    });
+                </script>
+               
+            </div>
+          
+          </div>
+      <!-- <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">
+          <p style="line-height: 3vw;">&lt;button&gt; is an opening tag. It tells the web browser we want to start displaying a button.</p>
+
+          </div>
+        </div> -->
+        <div class="swiper-slide">
+            <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+              <div id="formContainer3">
+                <p class="pbold">
+                    To create a variable, we start by typing its name. Variable names need to be single words and, therefore, have no spaces. <br><br>
+
+                    Tap the variable name <em> city</em> to get started.
+                </p>
+  
+                <form id="myForm3">
+                    <input type="radio" id="option3.1" name="options" value="option1">
+                    <label for="option1" style="padding: 2vw;">home city</label><br><br>
+                    <input type="radio" id="option3.2" name="options" value="option2">
+                    <label for="option2" style="padding: 2vw;">city</label><br><br>
+                    
+                    <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                    <p id="suggestion3" class="suggestion3"></p>
+                </form>
+              </div>
+                <div id="popupBox3" style="position: fixed; top: 50%; right: 5vw; transform: translateY(-50%);  width: 20vw; height: 22vw; display: none; border: 1px solid #867d7d; border-radius: 5%;">
+                  <div style="background-color: #fe320a; height: 3.1vw; z-index: -1; border-top-left-radius: 16px; border-top-right-radius: 16px;">Output <hr></div>
+                  <h4> city </h4> 
+                
+              </div>
+              <script>
+                  document.getElementById('myForm3').addEventListener('submit', function(event) {
+                      event.preventDefault();
+                      var suggestion3 = document.getElementById('suggestion3');
+                      var popupBox3 = document.getElementById('popupBox3');
+                      var container3 = document.querySelector('.swiper-slide');
+                      if (document.getElementById('option3.2').checked) {
+                          suggestion3.textContent = "That's right! We'll start our coding adventure by learning HTML.";
+                          popupBox3.style.display = 'block'; // Show the pop-up box
+                         
+                          container3.style.marginRight = '-10vw'; // Shift the container to the right
+                      } else {
+                          suggestion3.textContent = 'Oops! Wrong answer.';
+                      }
+                  });
+              </script>
+              
+            </div>
+          
+          </div>
+          <div class="swiper-slide">
+            <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+              <div id="formContainer4">
+                <p class="pbold">
+                    If we want a variable name with multiple words, we use snake case. Snake case means using <em>_</em> to connect the additional words. <br><br>
+                    home    <em>  </em>city
+                </p>
+  
+                <form id="myForm4">
+                    <input type="radio" id="option4.1" name="options" value="option1">
+                    <label for="option1" style="padding: 2vw;">+</label><br><br>
+                    <input type="radio" id="option4.2" name="options" value="option2">
+                    <label for="option2" style="padding: 2vw;">_</label><br><br>
+                    
+                    <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                    <p id="suggestion4" class="suggestion4"></p>
+                </form>
+              </div>
+             
+              </div>
+              <script>
+                  document.getElementById('myForm4').addEventListener('submit', function(event) {
+                      event.preventDefault();
+                      var suggestion4 = document.getElementById('suggestion4');
+                      var popupBox4 = document.getElementById('popupBox4');
+                      var container4 = document.querySelector('.swiper-slide');
+                      if (document.getElementById('option4.2').checked) {
+                          suggestion4.textContent = "That's right! We'll start our coding adventure by learning HTML.";
+                          popupBox4.style.display = 'block'; // Show the pop-up box
+                         
+                          container4.style.marginRight = '-10vw'; // Shift the container to the right
+                      } else {
+                          suggestion4.textContent = 'Oops! Wrong answer.';
+                      }
+                  });
+              </script>
+              
+            </div>
+          
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+          <p class="pbold">
+            What's wrong with this variable name? <br><br>
+            high score
+          </p>
+          <form id="myForm5">
+              <input type="radio" id="option5.1" name="options" value="option1">
+              <label for="option4.1" style="padding: 0.5vw;">There's a space between the words</label><br><br>
+              <input type="radio" id="option5.2" name="options" value="option2">
+              <label for="option4.2" style="padding: 1vw;">It contains a lowercase letter</label><br><br>
+          
+              <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+              <p id="suggestion5" class="suggestion5"></p>
+          </form>
+      
+          <script> 
+           document.getElementById('myForm5').addEventListener('submit', function(event) {
+              event.preventDefault();
+              
+                  var suggestion5 = document.getElementById('suggestion5');
+                  if (document.getElementById('option5.1').checked) {
+                      suggestion5.textContent = "Question solved. Great Job!";
+                  } else {
+                      suggestion5.textContent = 'Oops! Wrong answer.';
+                  }
+              });
+          </script>
+         
+      </div>
+      </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+          <p class="pbold">
+            To help us understand what's inside a variable we pick descriptive names.
+          </p>
+          <form id="myForm6">
+              <input type="radio" id="option6.1" name="options" value="option1">
+              <label for="option4.1" style="padding: 0.5vw;">home_city_province</label><br><br>
+              <input type="radio" id="option6.2" name="options" value="option2">
+              <label for="option4.2" style="padding: 1vw;">hcp</label><br><br>
+              <input type="radio" id="option6.3" name="options" value="option1">
+              <label for="option4.1" style="padding: 0.5vw;">home_cp</label><br><br>
+              <input type="radio" id="option6.4" name="options" value="option1">
+              <label for="option4.1" style="padding: 0.5vw;">h_city_pro</label><br><br>
+          
+              <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+              <p id="suggestion6" class="suggestion6"></p>
+          </form>
+      
+          <script> 
+           document.getElementById('myForm6').addEventListener('submit', function(event) {
+              event.preventDefault();
+              
+                  var suggestion6 = document.getElementById('suggestion6');
+                  if (document.getElementById('option6.1').checked) {
+                      suggestion6.textContent = "Question solved. Great Job!";
+                  } else {
+                      suggestion6.textContent = 'Oops! Wrong answer.';
+                  }
+              });
+          </script>
+         
+      </div>
+      </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+            <p class="pbold">
+                Pick the most descriptive variable name.
+            </p>
+            <form id="myForm7">
+                <input type="radio" id="option7.1" name="options" value="option1">
+                <label for="option7.1" style="padding: 0.5vw;">hs</label><br><br>
+                <input type="radio" id="option7.2" name="options" value="option2">
+                <label for="option7.2" style="padding: 1vw;">h_s</label><br><br>
+                <input type="radio" id="option7.3" name="options" value="option3">
+                <label for="option7.3" style="padding: 1vw;">high_s</label><br><br>
+                <input type="radio" id="option7.4" name="options" value="option4">
+                <label for="option7.4" style="padding: 1vw;">high_score</label><br><br>
+                <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                <p id="suggestion7" class="suggestion7"></p>
+            </form>
+        
+            <script> 
+             document.getElementById('myForm7').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                    var suggestion7 = document.getElementById('suggestion7');
+                    if (document.getElementById('option7.4').checked) {
+                        suggestion7.textContent = "Question solved. Great Job!";
+                    } else {
+                        suggestion7.textContent = 'Oops! Wrong answer.';
+                    }
+                });
+
+                document.getElementById('myForm7').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var suggestion7 = document.getElementById('suggestion7');
+    if (document.getElementById('option7.2').checked) {
+        suggestion7.textContent = "Question solved. Great Job!";
+        showModal();
+    } else {
+        suggestion7.textContent = 'Oops! Wrong answer.';
+    }
+});
+
+function showModal() {
+    var modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.zIndex = '1';
+    modal.style.left = '0';
+    modal.style.top = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.overflow = 'auto';
+    modal.style.backgroundColor = 'rgba(0,0,0,0.4)';
+
+
+    var modalContent = document.createElement('div');
+    modalContent.style.backgroundColor = '#EFEAE3';
+    modalContent.style.margin = '15% auto';
+    modalContent.style.padding = '20px';
+    modalContent.style.border = '1px solid #888';
+    modalContent.style.width = '25%'; // Adjust this to change the size of the modal
+    modalContent.style.height = '25%'; // Adjust this to change the size of the modal
+    modalContent.style.display = 'flex';
+    modalContent.style.flexDirection = 'column';
+    modalContent.style.justifyContent = 'space-between';
+    modalContent.style.borderRadius = '5%';
+    modalContent.style.fontSize= '1.3rem';
+    modalContent.style.textAlign= 'center';
+
+
+
+    var text = document.createElement('p'); 
+    text.style.flexGrow = '1'; 
+    text.style.display = 'flex'; 
+    text.style.justifyContent = 'center';
+    text.style.alignItems = 'center'; 
+    text.textContent = 'Great job! Now lets move on to next level.';
+    modalContent.appendChild(text);
+
+    var closeButton = document.createElement('button');
+    closeButton.textContent = 'Next >';
+    closeButton.style.alignSelf = 'center';
+    closeButton.style.width = '5vw';
+    closeButton.style.height = '2vw';
+    closeButton.style.fontWeight = '900';
+    closeButton.onclick = function() {
+      window.location.href = '2.html';
+    };
+    modalContent.appendChild(closeButton);
+
+    modal.appendChild(modalContent);
+
+    document.body.appendChild(modal);
+}
+
+
+            </script>
+           
+        </div>
+      
+      </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+          <p class="pbold">
+            What do we use snake case for?
+          </p>
+          <form id="myForm8">
+              <input type="radio" id="option8.1" name="options" value="option1">
+              <label for="option8.1" style="padding: 0.5vw;">To create variable names with multiple words</label><br><br>
+              <input type="radio" id="option8.2" name="options" value="option2">
+              <label for="option8.2" style="padding: 1vw;">To create variable names with spaces</label><br><br>
+          
+              <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+              <p id="suggestion8" class="suggestion8"></p>
+          </form>
+      
+          <script> 
+           document.getElementById('myForm8').addEventListener('submit', function(event) {
+              event.preventDefault();
+              
+                  var suggestion8 = document.getElementById('suggestion8');
+                  if (document.getElementById('option8.1').checked) {
+                      suggestion8.textContent = "Question solved. Great Job!";
+                  } else {
+                      suggestion8.textContent = 'Oops! Wrong answer.';
+                  }
+              });
+          </script>
+         
+      </div>
+      </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+          <p class="pbold">
+            Why do we give variables descriptive names like city or population instead of <strong>c</strong> or <strong>p</strong> ?
+          </p>
+          <form id="myForm9">
+              <input type="radio" id="option9.1" name="options" value="option1">
+              <label for="option9.1" style="padding: 0.5vw;">To make them faster to type</label><br><br>
+              <input type="radio" id="option9.2" name="options" value="option2">
+              <label for="option9.2" style="padding: 1vw;">To help us understand what's inside them</label><br><br>
+          
+              <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+              <p id="suggestion9" class="suggestion9"></p>
+          </form>
+      
+          <script> 
+           document.getElementById('myForm9').addEventListener('submit', function(event) {
+              event.preventDefault();
+              
+                  var suggestion9 = document.getElementById('suggestion9');
+                  if (document.getElementById('option9.2').checked) {
+                      suggestion9.textContent = "Question solved. Great Job!";
+                      showModal();
+                  } else {
+                      suggestion9.textContent = 'Oops! Wrong answer.';
+                  }
+              });
+              
+              function showModal() {
+    var modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.zIndex = '1';
+    modal.style.left = '0';
+    modal.style.top = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.overflow = 'auto';
+    modal.style.backgroundColor = 'rgba(0,0,0,0.4)';
+
+    var modalContent = document.createElement('div');
+    modalContent.style.backgroundColor = '#EFEAE3';
+    modalContent.style.margin = '15% auto';
+    modalContent.style.padding = '20px';
+    modalContent.style.border = '1px solid #888';
+    modalContent.style.width = '25%'; // Adjust this to change the size of the modal
+    modalContent.style.height = '25%'; // Adjust this to change the size of the modal
+    modalContent.style.display = 'flex';
+    modalContent.style.flexDirection = 'column';
+    modalContent.style.justifyContent = 'space-between';
+    modalContent.style.borderRadius = '5%';
+    modalContent.style.fontSize = '1.5rem';
+    modalContent.style.textAlign = 'center';
+
+    // Add iframe as background
+    var iframeBackground = document.createElement('iframe');
+    iframeBackground.src = "https://lottie.host/embed/3672ecd4-b6b9-4ab6-b384-2775f6f1fd5c/ZdfF5fCr5L.json";
+    iframeBackground.style.position = 'absolute';
+    iframeBackground.style.width = '100%';
+    iframeBackground.style.height = '100%';
+    iframeBackground.style.border = 'none';
+    iframeBackground.style.zIndex = '-1';
+    modal.appendChild(iframeBackground);
+
+    var text = document.createElement('p');
+    text.style.flexGrow = '1';
+    text.style.display = 'flex';
+    text.style.justifyContent = 'center';
+    text.style.alignItems = 'center';
+    text.textContent = 'Great job! Now lets move on to next level.';
+    modalContent.appendChild(text);
+
+    var closeButton = document.createElement('button');
+    closeButton.textContent = 'Next →';
+    closeButton.style.alignSelf = 'center';
+    closeButton.style.width = '7vw';
+    closeButton.style.height = '2vw';
+    closeButton.style.fontWeight = '900';
+    closeButton.style.backgroundColor = '#fe320a';
+    closeButton.onclick = function () {
+        window.location.href = '2.html';
+    };
+    modalContent.appendChild(closeButton);
+
+    modal.appendChild(modalContent);
+
+    document.body.appendChild(modal);
+}
+
+          </script>
+         
+      </div>
+      </div>
+    </div>
+</div>
+    <div class="swiper-pagination"></div>
+</div>
+  
+  <!-- Pagination -->
+  <div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>

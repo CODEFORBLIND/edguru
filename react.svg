@@ -1,0 +1,17 @@
+<svg width="220" height="218" viewBox="0 0 220 218" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="filter0_dddd_1_2807" x="-40%" y="-40%" width="180%" height="180%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+      <feOffset dx="0" dy="6" in="SourceAlpha" result="offset-outer"/>
+      <feGaussianBlur stdDeviation="4" in="offset-outer" result="blur-outer"/>
+      <feFlood flood-color="#FE320A" flood-opacity="1" result="shadowColor"/>
+      <feComposite in="shadowColor" in2="blur-outer" operator="in" result="shadow"/>
+      <feBlend in="SourceGraphic" in2="shadow" mode="normal"/>
+    </filter>
+  </defs>
+  <g filter="url(#filter0_dddd_1_2807)">
+    <path d="M109.017 114.091C111.685 114.693 114.336 113.017 114.938 110.348C115.539 107.679 113.863 105.028 111.195 104.427C108.526 103.825 105.875 105.501 105.274 108.17C104.672 110.839 106.348 113.49 109.017 114.091Z" fill="#FE320A"/>
+    <path d="M107.873 119.159C122.193 122.387 134.8 120.571 136.032 115.103C137.265 109.636 126.655 102.587 112.336 99.3595C98.016 96.132 85.4087 97.9479 84.1764 103.415C82.9441 108.883 93.5534 115.932 107.873 119.159Z" stroke="#FE320A" stroke-width="2"/>
+    <path d="M118.008 134.624C123.36 132.957 124.159 120.245 119.794 106.23C115.43 92.2152 107.553 82.2048 102.202 83.8714C96.8511 85.5379 96.0515 98.2502 100.416 112.265C104.781 126.28 112.657 136.29 118.008 134.624Z" stroke="#FE320A" stroke-width="2"/>
+    <path d="M117.575 116.146C127.53 105.358 132.261 93.5322 128.142 89.7313C124.023 85.9303 112.614 91.594 102.659 102.381C92.7042 113.169 87.9732 124.995 92.092 128.796C96.2109 132.597 107.62 126.933 117.575 116.146Z" stroke="#FE320A" stroke-width="2"/>
+  </g>
+</svg>

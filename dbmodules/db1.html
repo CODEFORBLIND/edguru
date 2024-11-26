@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Selecting Data</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" href="../logooo .jpg"  type="image/gif" sizes="64x64">
+
+
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Acme&family=Anta&display=swap');
+    html,
+    body {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #333333;
+      font-size: 14px;
+      color: #000;
+      font-family: 'Acme', sans-serif;
+    }
+
+    .swiper {
+      width: 100%;
+      /* height: calc(100% - 5px); Adjusted height to accommodate the navigation bar */
+      /* margin-top: 4vw; Added margin-top to create space for the navigation bar */
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+    }
+
+    /* .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      /* object-fit: cover; 
+    } */
+    
+    /* Navigation bar styles */
+    .navigation-bar {
+      font-size: 1.5vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 1.5vw;
+      box-sizing: border-box;
+      z-index: 1000; /* Ensure navigation bar appears above other content */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+     
+    }
+    
+    .navigation-bar div {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    
+    /* Adjusted progress bar styles */
+    .swiper-pagination {
+      /* height: 5vw; */
+      position: absolute;
+      bottom: 50px;
+      /* left: 50%; */
+      /* transform: translateX(-50%); */
+      width: auto;
+      display: flex;
+      margin-top: 5vw;
+      padding: 0.25vw 0;
+
+    }
+
+    #myForm{
+      text-align: start;
+      /* padding-left: 25vw; */
+      text-align: center;
+    }
+
+    table, th, td {
+  border:1px solid black;
+}
+ th , td{
+    background-color: white;
+ }
+
+.pbold{
+  font-weight: 800;
+  font-size: 2vw;
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Semi-transparent white */
+    z-index: 1000; /* Ensure the overlay appears above other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow : auto;
+   
+  }
+  
+  /* Modal content style */
+  .modal-content {
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    background-color : #EFEAE3;
+    margin : 15% auto;
+
+    border : 1px solid #888;
+    width : 25%; 
+    height :25%; 
+    display :flex;
+    flex-direction : column;
+    justify-content :space-between;
+  
+    font-size: 1.5rem;
+    text-align: center;
+
+  }
+  .next-btn{
+   align-self : center;
+   width : 7vw;
+   height : 2vw;
+   font-weight :900;
+   background-color: #fe320a;
+  }
+
+  .next-btn:hover{
+ color: white;
+ transform: scale(1.1);
+ box-shadow: 1vw #333;
+  }
+
+
+  </style>
+</head>
+
+<body>
+    
+  <!-- Navigation bar -->
+  <div class="navigation-bar">
+    <div style="height: 2vw; width: 2vw; background-color: #333;"><a href="../databasecor.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></a></div>
+    <div>Selecting Data</div>
+    <div style="height: 2vw; width: 2vw; background-color: #333;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#ffffff" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></div>
+  </div>
+    
+  <!-- Swiper -->
+ 
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+      <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">
+          <p style="line-height: 3vw;">Many apps you interact with store data like a username, password, or friends list.<br>
+            This kind of data lives in a database. Most databases are collections of tables storing different pieces of data.</p>
+          <div class="img1"><img src="https://images.getmimo.com/images/3d88f917-b87f-49bf-ac65-9354f30e31ea" alt=""  style="height: 20vw;"></div>
+          
+
+          </div>
+      </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+            <p  class="pbold">
+                What kind of data do you think an app like EdGuru stores?
+            </p>
+            <form id="myForm1">
+                <input type="radio" id="option1.1" name="options" value="option1">
+                <label for="option1" style="padding: 2vw;">Data like users' names, emails, active streak, and progress</label><br><br>
+                <input type="radio" id="option1.2" name="options" value="option2">
+                <label for="option2" style="padding: 2vw;">Data like users' favorite movies</label><br><br>
+                <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                <p id="suggestion" class="suggestion"></p>
+            </form>
+        
+            <script> 
+             document.getElementById('myForm1').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                    var suggestion = document.getElementById('suggestion');
+                    if (document.getElementById('option1.1').checked) {
+                        suggestion.textContent = "Question solved. Great Job!";
+                    } else {
+                        suggestion.textContent = 'Oops! Wrong answer.';
+                    }
+                });
+            </script>
+          
+        </div>
+      
+      </div>
+      <div class="swiper-slide" style="display: flex; flex-direction: column;">
+        <div class="img1"><img src="https://images.getmimo.com/images/ff7b7769-2d0b-40d5-b0f9-c3c51a39aaa1" alt=""  style="height: 20vw;"></div>
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw; margin-top: 2.5vw;">
+            <p style="line-height: 3vw;">SQL is a language for modifying, inserting, and accessing data from tables in a database.</p>
+            
+            
+  
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+                <p class="pbold">
+                    What is SQL?
+                </p>
+                <form id="myForm2">
+                    <input type="radio" id="option2.1" name="options" value="option1">
+                    <label for="option1" style="padding: 0.5vw;">A programming language we use to code website interfaces</label><br><br>
+                    <input type="radio" id="option2.2" name="options" value="option2">
+                    <label for="option2" style="padding: 1vw;">A programming language we use to select, modify, and insert data in databases</label><br><br>
+                    <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                    <p id="suggestion2" class="suggestion2"></p>
+                </form>
+            
+                <script> 
+                 document.getElementById('myForm2').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                        var suggestion2 = document.getElementById('suggestion2');
+                        if (document.getElementById('option2.2').checked) {
+                            suggestion2.textContent = "Question solved. Great Job!";
+                        } else {
+                            suggestion2.textContent = 'Oops! Wrong answer.';
+                        }
+                    });
+                </script>
+               
+            </div>
+          
+          </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">
+          <p style="line-height: 3vw;">Tables are like spreadsheets storing information about a specific kind of data, like this table storing users' IDs, names, and emails.</p>
+          <table style="width:100%; background-color: #867d7d;">
+            <tr>
+            <td style="border: none; background-color: #867d7d;">User</td></tr>
+              <tr>
+                <th>userID</th>
+                <th>name</th>
+                <th>email</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Sam</td>
+                <td>sam17@mail.com</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Remy</td>
+                <td>rem@mail.com</td>
+              </tr>
+               <tr>
+                <td>3</td>
+                <td>Luis</td>
+                <td>luis_99@mail.com</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="swiper-slide">
+            <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">
+              <p style="line-height: 3vw;">Each row of a table represents a new item, like how the first row contains data about a user item's ID, name, and email address.</p>
+              <table style="width:100%; background-color: #867d7d;">
+                <tr>
+                <td style="border: none; background-color: #867d7d;">User</td></tr>
+                  <tr>
+                    <th>userID</th>
+                    <th>name</th>
+                    <th>email</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Sam</td>
+                    <td>sam17@mail.com</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Remy</td>
+                    <td>rem@mail.com</td>
+                  </tr>
+                   <tr>
+                    <td>3</td>
+                    <td>Luis</td>
+                    <td>luis_99@mail.com</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+            <p style="line-height: 3vw;" class="pbold">If every row stores an item, how many user items does this table store?</p>
+              <table style="width:100%; background-color: #867d7d; margin-bottom: 2vw;">
+                <tr>
+                <td style="border: none; background-color: #867d7d;">User</td></tr>
+                  <tr>
+                    <th>userID</th>
+                    <th>name</th>
+                    <th>email</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Sam</td>
+                    <td>sam17@mail.com</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Remy</td>
+                    <td>rem@mail.com</td>
+                  </tr>
+                   <tr>
+                    <td>3</td>
+                    <td>Luis</td>
+                    <td>luis_99@mail.com</td>
+                  </tr>
+                </table>
+            <form id="myForm3">
+                <input type="radio" id="option3.1" name="options" value="option1">
+                <label for="option3.1" style="padding: 0.5vw;">We can't know how many user items it stores</label><br><br>
+                <input type="radio" id="option3.2" name="options" value="option2">
+                <label for="option3.2" style="padding: 1vw;">Three user items, because it has three rows</label><br><br>
+            
+                <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                <p id="suggestion3" class="suggestion3"></p>
+            </form>
+        
+            <script> 
+             document.getElementById('myForm3').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                    var suggestion3 = document.getElementById('suggestion3');
+                    if (document.getElementById('option3.2').checked) {
+                        suggestion3.textContent = "Question solved. Great Job!";
+                    } else {
+                        suggestion3.textContent = 'Oops! Wrong answer.';
+                    }
+                });
+            </script>
+           
+        </div>
+      
+      </div>
+
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+            <p style="line-height: 3vw;" class="pbold">If rows stand for items, what do you think columns are?</p>
+              <table style="width:100%; background-color: #867d7d; margin-bottom: 2vw;">
+                <tr>
+                <td style="border: none; background-color: #867d7d;">User</td></tr>
+                  <tr>
+                    <th>userID</th>
+                    <th>name</th>
+                    <th>email</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Sam</td>
+                    <td>sam17@mail.com</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Remy</td>
+                    <td>rem@mail.com</td>
+                  </tr>
+                   <tr>
+                    <td>3</td>
+                    <td>Luis</td>
+                    <td>luis_99@mail.com</td>
+                  </tr>
+                </table>
+            <form id="myForm4">
+                <input type="radio" id="option4.1" name="options" value="option1">
+                <label for="option3.1" style="padding: 0.5vw;">Properties of each user item, like a name or email</label><br><br>
+                <input type="radio" id="option4.2" name="options" value="option2">
+                <label for="option3.2" style="padding: 1vw;">Each column stands for a different user item</label><br><br>
+            
+                <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                <p id="suggestion4" class="suggestion4"></p>
+            </form>
+        
+            <script> 
+             document.getElementById('myForm4').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                    var suggestion4 = document.getElementById('suggestion4');
+                    if (document.getElementById('option4.1').checked) {
+                        suggestion4.textContent = "Question solved. Great Job!";
+                    } else {
+                        suggestion4.textContent = 'Oops! Wrong answer.';
+                    }
+                });
+            </script>
+           
+        </div>
+      
+      </div>
+
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;">
+            <p style="line-height: 3vw;">Columns store properties of items, like how the email column stores the email of each user item.</p>
+            <table style="width:100%; background-color: #867d7d;">
+                <tr>
+                    <td style="border: none; background-color: #867d7d;">User</td>
+                </tr>
+                <tr>
+                    <th>userID</th>
+                    <th>name</th>
+                    <th>email</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Sam</td>
+                    <td>sam17@mail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Remy</td>
+                    <td>rem@mail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Luis</td>
+                    <td>luis_99@mail.com</td>
+                </tr>
+            </table>
+            <!-- Continue button -->
+            <button id="continueButton" style="background-color: #fe320a; height: 3vw; width: 10vw; font-size: 1.5vw; border-radius: 5px; margin-top: 2vw;">Continue</button>
+        </div>
+    
+        <script>
+            function showModal() {
+                var modalOverlay = document.createElement('div');
+                modalOverlay.classList.add('modal-overlay');
+    
+                var modalContent = document.createElement('div');
+                modalContent.classList.add('modal-content');
+    
+                // Create iframe element
+                var iframeBackground = document.createElement('iframe');
+                iframeBackground.src = "https://lottie.host/embed/3672ecd4-b6b9-4ab6-b384-2775f6f1fd5c/ZdfF5fCr5L.json";
+                iframeBackground.style.top = '-2%';
+                iframeBackground.style.left = '-1%';
+                iframeBackground.style.position = 'absolute';
+                iframeBackground.style.width = '100%';
+                iframeBackground.style.height = '100%';
+                iframeBackground.style.border = 'none';
+                iframeBackground.style.zIndex = '-1';
+                iframeBackground.style.overflowY = 'hidden';
+
+                modalContent.appendChild(iframeBackground);
+    
+                modalContent.innerHTML += `
+                    <p>Great job! Now let's move on to the next level.</p>
+                    <button id="nextButton" class="next-btn">Next →</button>
+                `;
+    
+                modalOverlay.appendChild(modalContent);
+    
+                document.body.appendChild(modalOverlay);
+    
+                modalOverlay.addEventListener('click', closeModal);
+    
+                var nextButton = document.getElementById('nextButton');
+                nextButton.addEventListener('click', function() {
+                    window.location.href = 'db2.html';
+                });
+            }
+    
+            function closeModal() {
+                var modalOverlay = document.querySelector('.modal-overlay');
+                modalOverlay.parentNode.removeChild(modalOverlay);
+            }
+    
+            var continueButton = document.getElementById('continueButton');
+    
+            continueButton.addEventListener('click', showModal);
+        </script>
+    </div>
+    
+    
+      
+
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+  
+  <!-- Pagination -->
+  <div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>

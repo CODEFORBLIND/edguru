@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Anta&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-y: auto;
+}
+
+
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    /* margin: 1.5vw 3vw 2.5vw 2.5vw; */
+    background-color: black;
+    color: white;
+    padding-right: 2vw;
+    font-size: 1.75vw;
+}
+
+#navpart1{
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    padding-left: 1.25vw;
+}
+
+#navpart2{
+    display: flex;
+    padding-top: 11px;
+}
+
+
+.container1{
+    display: flex;
+    /* background-color: green; */
+    height: 15vw;
+    width: 100%;
+}
+.fixed, .moving{
+    width: 50%;
+}
+.fixed{
+    background-color: grey !important;
+}
+
+.moving{
+    background-color: #EFEAE3 !important;
+    height: 55vw;
+}
+
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+      /* font-size: 28px; */
+  padding: 22px;
+  background-color: black;
+  /* margin-top: 3vw; */
+  color: #fe320a;
+  /* font-weight: 500; */
+  margin-bottom: 3vw;
+  font-family: "Acme", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 2vw;
+  height: 6vw !important; /* Adjust this value as needed */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: auto;
+  border: 1px solid white;
+  text-align: center;
+  
+  }
+
+  .swiper-slide:hover {
+    color: #EFEAE3;
+    /* background-color: #eb18bd ; */
+    transform: scale(1.05);
+  }
+  .swiper-slide a:hover{
+    color: #EFEAE3;
+  }
+   
+  .swiper-slide a{
+  color: #fe320a;
+  text-decoration: none;
+    
+  }
+
+
+  .outer-box{
+      height: 80vh;
+      overflow: hidden;
+      width: 70vh;
+      /* border-radius: 12%; */
+      background: linear-gradient(#262626 0%,#1A1A1A , #0D0D0D 62.56%);
+      /* border: 2px solid white; */
+      /* box-shadow: 5px 8px 10px #d71d00; */
+      z-index: 1;
+      margin-bottom: 5vw;
+  }
+
+.swiper-scrollbar{
+  scrollbar-color: #fe320a transparent;
+  scrollbar-width: 3vw;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #262626; display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d71d00;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d71d00;
+  display: none;
+}
+
+
+.curriculum {
+  /* background-color: #000; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  position: relative;
+  overflow: hidden;
+
+    z-index: 1; /* Ensure the content is above the iframe */
+
+}
+
+
+.container1 {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+    background: url() ;
+  }
+  
+  .fixed {
+    position: sticky;
+    top: 0;
+    background-color: #ccc;
+    padding: 30px;
+    margin-right: 20px; /* Spacing between the two divs */
+    /* height: 55vw; */
+  }
+  
+  .moving {
+    overflow-y: auto; 
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    flex-grow: 1; 
+  }
+
+  .moving iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* This prevents interaction with iframe */
+}
+  .moving::-webkit-scrollbar {
+    display: none;
+  }
+
+  #moving1 {
+    overflow-y: auto; 
+    /* Enable vertical scrolling */
+    flex-grow: 1; /* Allow the moving div to grow to fill the remaining space */
+  }
+  #moving1::-webkit-scrollbar {
+    display: none;
+  }
+
+
+.card{
+  width: 35vw;
+  margin-top: 10vw;
+  margin-left: 3vw;
+  margin-right: 2vw;
+  border: 10px solid white;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* make sure it's above other content */
+}
+
+/* Style for the pop-up box */
+.popup-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.white-box {
+  background-color: white;
+  width: 200px; /* Adjust width as needed */
+  height: auto; /* Adjust height as needed */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Make sure it's above other content */
+  display: none; /* Initially hidden */
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 10px; /* Adjust border radius as needed */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

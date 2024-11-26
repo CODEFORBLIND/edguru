@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Structuring Text With Tags</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" href="../logooo .jpg"  type="image/gif" sizes="64x64">
+
+
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Acme&family=Anta&display=swap');
+    html,
+    body {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #000000;
+      font-size: 14px;
+      color: #000;
+      font-family: 'Acme', sans-serif;
+    }
+
+    .swiper {
+      width: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 96vh;
+    }
+    .navigation-bar {
+      font-size: 1.5vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 1.5vw;
+      box-sizing: border-box;
+      z-index: 1000; 
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+     
+    }
+    
+    .navigation-bar div {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    
+    
+    .swiper-pagination {
+      position: absolute;
+      bottom: 50px;
+      width: auto;
+      display: flex;
+      margin-top: 5vw;
+      padding: 0.25vw 0;
+
+    }
+
+    #myForm {
+      text-align: start;
+      text-align: center;
+    }
+    
+    .fixed {
+  margin-left: 7vw;
+  border: 2px solid #867d7d;
+    /* padding: 30px; */
+    /* margin-right: 20px; */
+    height: 20vw;
+  width: 45vw;
+
+  }
+
+  </style>
+</head>
+
+<body>
+    
+ 
+  <div class="navigation-bar">
+    <div style="height: 2vw; width: 2vw; background-color: #333;"><a href="../frontcor.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></a></div>
+    <div>Structuring Text with Tags</div>
+    <div style="height: 2vw; width: 2vw; background-color: #333;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#ffffff" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></div>
+  </div>
+    
+ 
+ 
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+    
+      <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">
+          <p style="line-height: 3vw;">Sometimes we want to format paragraphs with line breaks. <br><br>
+
+            For example, this song would look much better if <em> Raindrops on roses </em>  appeared on one line, <em>Whiskers on kittens  </em>  on the next, and so on.</p>
+          <!-- <div class="img1"><img src="1.webp" alt=""  style="height: 20vw;"></div> -->
+          <div class="fixed">
+            <div class="card" style="height: 3.4vw;
+            background-color: #a59e9e;">
+              <div style="display: flex;
+              padding-left: 1vw; padding-top: 0.15vw; ">Browser</div>
+              <hr style=" border-color: #867d7d; display: flex; justify-content: flex-start; text-align: start;">
+              <h3 >My favorite things <br></h3>
+               <h5> Raindrops on roses.Whiskers on kittens Bright copper kettles Warm woolen mittens</h5>
+            </div>
+          </div>
+
+          </div>
+      </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw; ">
+            <div id="formContainer"> <!-- New container div -->
+                <p>
+                    We can separate lines with the help of the line break tag:&lt;br&gt;.<br>
+                    &lt;h1&gt;My favorite things&lt;/h1&gt; <br>
+                    &lt;p&gt;Raindrops on roses&lt;_&gt; <br>
+                    Whiskers on kittens&lt;br&gt; <br>
+                    Bright copper kettles&lt;_&gt;<br>
+                    Warm woolen mittens&lt;/p&gt;
+                </p>
+                <form id="myForm1">
+                    <input type="radio" id="option1.1" name="options" value="option1">
+                    <label for="option1" style="padding: 2vw;">&lt;br&gt; , &lt;br&gt;</label><br><br>
+                    <input type="radio" id="option1.2" name="options" value="option2">
+                    <label for="option2" style="padding: 2vw;">&lt;hr&gt;, &lt;br&gt;</label><br><br>
+                    <input type="radio" id="option1.3" name="options" value="option3">
+                    <label for="option3" style="padding: 1.5vw;">&lt;p&gt; , &lt;br&gt;</label><br><br>
+                    <input type="radio" id="option1.4" name="options" value="option3">
+                    <label for="option4">&lt;html&gt;, &lt;hr&gt;</label><br><br>
+                    <input type="submit" value="Submit" style="background-color: #fe320a; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                    <p id="suggestion" class="suggestion"></p>
+                </form>
+            </div>
+            <div id="popupBox" style="position: fixed; top: 50%; right: 5vw; transform: translateY(-50%);  width: 20vw; height: 22vw; display: none; border: 1px solid #867d7d; border-radius: 5%;">
+                <div style="background-color: lightblue; height: 3.1vw; z-index: -1; border-top-left-radius: 16px; border-top-right-radius: 16px;">Output <hr></div>
+                <h4> My favorite things </h4> 
+               <p>Raindrops on roses <br>
+                Whiskers on kittens <br>
+                Bright copper kettles<br>
+                Warm woolen mittens</p>
+            </div>
+    
+            <script>
+                document.getElementById('myForm1').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    var suggestion = document.getElementById('suggestion');
+                    var popupBox = document.getElementById('popupBox');
+                    var container = document.querySelector('.swiper-slide');
+                    if (document.getElementById('option1.1').checked) {
+                        suggestion.textContent = "That's right! We'll start our coding adventure by learning HTML.";
+                        popupBox.style.display = 'block'; // Show the pop-up box
+                       
+                        container.style.marginRight = '-10vw'; // Shift the container to the right
+                    } else {
+                        suggestion.textContent = 'Oops! Wrong answer.';
+                    }
+                });
+            </script>
+            
+        </div>
+    </div>
+      <!-- <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">
+          <p style="line-height: 3vw;">
+            In HTML, things revolve around tags. Tags start with &lt;, followed by a keyword, then finished with a &gt;.
+            Let's create our first &lt;button&gt; tag in the index.html file below!</p>
+            
+          </div>
+        </div> -->
+        <div class="swiper-slide">
+          <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+            <div id="formContainer2">
+              <p>
+                There's an element for giving emphasis to text, it makes it italic. It's called the em element. Add &lt;em&gt; and &lt;/em&gt;.
+                &lt;h1&gt;My favorite things&lt;h1&gt;<br>
+                &lt;p&gt;
+                Raindrops on __ roses __ &lt;br&gt;<br>
+                Whiskers on kittens&lt;br&gt;<br>
+                Bright copper kettles&lt;br&gt;<br>
+                Warm woolen mittens
+                &lt;/p&gt;
+              </p>
+
+              <form id="myForm2">
+                  <input type="radio" id="option2.1" name="options" value="option1">
+                  <label for="option1" style="padding: 2vw;">&lt;em&gt; , &lt;br&gt;</label><br><br>
+                  <input type="radio" id="option2.2" name="options" value="option2">
+                  <label for="option2" style="padding: 2vw;">&lt;br&gt;, &lt;hr&gt;</label><br><br>
+                  <input type="radio" id="option2.3" name="options" value="option3">
+                  <label for="option3" style="padding: 1.5vw;">&lt;em&gt; , &lt;/em&gt;</label><br><br>
+                  <input type="radio" id="option2.4" name="options" value="option3">
+                  <label for="option4" >&lt;em&gt;, &lt;em&gt;</label><br><br>
+                  <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                  <p id="suggestion2" class="suggestion2"></p>
+              </form>
+            </div>
+              <div id="popupBox2" style="position: fixed; top: 50%; right: 5vw; transform: translateY(-50%);  width: 20vw; height: 22vw; display: none; border: 1px solid #867d7d; border-radius: 5%;">
+                <div style="background-color: lightblue; height: 3.1vw; z-index: -1; border-top-left-radius: 16px; border-top-right-radius: 16px;">Output <hr></div>
+                <h4> My favorite things </h4> 
+               <p>Raindrops on <em>roses</em> <br>
+                Whiskers on kittens <br>
+                Bright copper kettles<br>
+                Warm woolen mittens</p>
+            </div>
+            <script>
+                document.getElementById('myForm2').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    var suggestion2 = document.getElementById('suggestion2');
+                    var popupBox2 = document.getElementById('popupBox2');
+                    var container2 = document.querySelector('.swiper-slide');
+                    if (document.getElementById('option2.3').checked) {
+                        suggestion2.textContent = "That's right! We'll start our coding adventure by learning HTML.";
+                        popupBox2.style.display = 'block'; // Show the pop-up box
+                       
+                        container2.style.marginRight = '-10vw'; // Shift the container to the right
+                    } else {
+                        suggestion2.textContent = 'Oops! Wrong answer.';
+                    }
+                });
+            </script>
+            
+          </div>
+        
+        </div>
+        <div class="swiper-slide">
+            <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw; ">
+                <div id="formContainer3"> <!-- New container div -->
+                    <p>
+                        To define texts as important, we use the &lt;strong&gt; and &lt;/strong&gt; tags. It makes text bold.
+                        &lt;h1&gt;My favorite things&lt;/h1&gt; <br>
+                        &lt;p&gt;
+                         Raindrops on &lt;em&gt;roses &lt;/em&gt; <br>
+                         Whiskers on _ kittens _
+                        
+                        &lt;/p&gt;
+                        
+                    </p>
+                    <form id="myForm3">
+                        <input type="radio" id="option3.1" name="options" value="option1">
+                        <label for="option1" style="padding: 2vw;">&lt;br&gt; , &lt;/br&gt;</label><br><br>
+                        <input type="radio" id="option3.2" name="options" value="option2">
+                        <label for="option2" style="padding: 2vw;">&lt;strong&gt;, &lt;/strong&gt;</label><br><br>
+                        <input type="radio" id="option3.3" name="options" value="option3">
+                        <label for="option3" style="padding: 1.5vw;">&lt;p&gt; , &lt;/p&gt;</label><br><br>
+                        <input type="radio" id="option3.4" name="options" value="option4">
+                        <label for="option4">&lt;i&gt;, &lt;/i&gt;</label><br><br>
+                        <input type="submit" value="Submit" style="background-color: #fe320a; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                        <p id="suggestion3" class="suggestion3"></p>
+                    </form>
+                </div>
+
+                <div id="popupBox3" style="position: fixed; top: 55%; right: 5vw; transform: translateY(-50%);  width: 20vw; height: 22vw; display: none; border: 1px solid #867d7d; border-radius: 5%;">
+                    <div style="background-color: lightblue; height: 3.1vw; z-index: -1; border-top-left-radius: 16px; border-top-right-radius: 16px;">Output <hr></div>
+                    <h4> My favorite things </h4> 
+                   <p>Raindrops on <em>roses</em> <br>
+                    Whiskers on <strong>kittens</strong> <br>
+                
+                </div>
+        
+                <script>
+                    document.getElementById('myForm3').addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        var suggestion3 = document.getElementById('suggestion3');
+                        var popupBox3 = document.getElementById('popupBox3');
+                        var container3 = document.querySelector('.swiper-slide');
+                        if (document.getElementById('option3.2').checked) {
+                            suggestion.textContent = "That's right! We'll start our coding adventure by learning HTML.";
+                            popupBox3.style.display = 'block'; // Show the pop-up box
+                           
+                            container3.style.marginRight = '-10vw'; // Shift the container to the right
+                        } else {
+                            suggestion3.textContent = 'Oops! Wrong answer.';
+                        }
+                    });
+                </script>
+                
+            </div>
+        </div>
+     
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+            <p>
+                What is &lt;br&gt; tag for?
+            </p>
+            <form id="myForm4">
+                <input type="radio" id="option4.1" name="options" value="option1">
+                <label for="option4.1" style="padding: 0.5vw;">It gives emphasis to text. </label><br><br>
+                <input type="radio" id="option4.2" name="options" value="option2">
+                <label for="option4.2" style="padding: 1vw;">It adds a line break.</label><br><br>
+                
+                <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                <p id="suggestion4" class="suggestion4"></p>
+            </form>
+        
+            <script> 
+             document.getElementById('myForm4').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                    var suggestion4 = document.getElementById('suggestion4');
+                    if (document.getElementById('option4.2').checked) {
+                        suggestion4.textContent = "Question solved. Great Job!";
+                    } else {
+                        suggestion4.textContent = 'Oops! Wrong answer.';
+                    }
+                });
+            </script>
+           
+        </div>
+      
+      </div>
+
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+          <p>
+            Which of these tags is an empty or self-closing tag?
+          </p>
+          <form id="myForm5">
+              <input type="radio" id="option5.1" name="options" value="option1">
+              <label for="option5.1" style="padding: 0.5vw;">&lt;/em&gt;</label><br><br>
+              <input type="radio" id="option5.2" name="options" value="option2">
+              <label for="option5.2" style="padding: 1vw;">&lt;br&gt;</label><br><br>
+              <input type="radio" id="option5.3" name="options" value="option2">
+              <label for="option5.3" style="padding: 1vw;">&lt;/strong&gt;</label><br><br>
+              <input type="radio" id="option5.4" name="options" value="option2">
+              <label for="option5.4" style="padding: 1vw;">&lt;p&gt;</label><br><br>          
+              <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+              <p id="suggestion5" class="suggestion5"></p>
+          </form>
+      
+          <script> 
+           document.getElementById('myForm5').addEventListener('submit', function(event) {
+              event.preventDefault();
+              
+                  var suggestio5 = document.getElementById('suggestion5');
+                  if (document.getElementById('option5.2').checked) {
+                      suggestion5.textContent = "Question solved. Great Job!";
+                  } else {
+                      suggestion5.textContent = 'Oops! Wrong answer.';
+                  }
+              });
+          </script>
+         
+      </div>
+      </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+          <p>
+            Which of these tags give emphasis to text?
+          </p>
+          <form id="myForm6">
+              <input type="radio" id="option6.1" name="options" value="option1">
+              <label for="option6.1" style="padding: 0.5vw;">&lt;em&gt; and &lt;/em&gt;</label><br><br>
+              <input type="radio" id="option6.2" name="options" value="option2">
+              <label for="option6.2" style="padding: 1vw;">&lt;strong&gt; and &lt;/strong&gt;</label><br><br>
+ 
+              <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+              <p id="suggestion6" class="suggestion6"></p>
+          </form>
+      
+          <script> 
+           document.getElementById('myForm6').addEventListener('submit', function(event) {
+              event.preventDefault();
+              
+                  var suggestion6 = document.getElementById('suggestion6');
+                  if (document.getElementById('option6.1').checked) {
+                      suggestion6.textContent = "Question solved. Great Job!";
+                  } else {
+                      suggestion6.textContent = 'Oops! Wrong answer.';
+                  }
+              });
+          </script>
+         
+      </div>
+      </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+            <p>
+              What are the &lt;strong&gt; and &lt;/strong&gt; tags for?
+            </p>
+            <form id="myForm7">
+                <input type="radio" id="option7.1" name="options" value="option1">
+                <label for="option7.1" style="padding: 0.5vw;">They make the text unbreakable by line break</label><br><br>
+                <input type="radio" id="option7.2" name="options" value="option2">
+                <label for="option7.2" style="padding: 1vw;">They define text as important         
+                </label><br><br>
+                <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                <p id="suggestion7" class="suggestion7"></p>
+            </form>
+        
+            <script> 
+             document.getElementById('myForm7').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                    var suggestion7 = document.getElementById('suggestion7');
+                    if (document.getElementById('option7.2').checked) {
+                        suggestion7.textContent = "Question solved. Great Job!";
+                    } else {
+                        suggestion7.textContent = 'Oops! Wrong answer.';
+                    }
+                });
+                document.getElementById('myForm7').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var suggestion7 = document.getElementById('suggestion7');
+    if (document.getElementById('option7.2').checked) {
+        suggestion7.textContent = "Question solved. Great Job!";
+        showModal();
+    } else {
+        suggestion7.textContent = 'Oops! Wrong answer.';
+    }
+});
+
+function showModal() {
+    var modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.zIndex = '1';
+    modal.style.left = '0';
+    modal.style.top = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.overflow = 'auto';
+    modal.style.backgroundColor = 'rgba(0,0,0,0.4)';
+
+
+    var modalContent = document.createElement('div');
+    modalContent.style.backgroundColor = '#EFEAE3';
+    modalContent.style.margin = '15% auto';
+    modalContent.style.padding = '20px';
+    modalContent.style.border = '1px solid #888';
+    modalContent.style.width = '25%'; // Adjust this to change the size of the modal
+    modalContent.style.height = '25%'; // Adjust this to change the size of the modal
+    modalContent.style.display = 'flex';
+    modalContent.style.flexDirection = 'column';
+    modalContent.style.justifyContent = 'space-between';
+    modalContent.style.borderRadius = '5%';
+    modalContent.style.fontSize= '1.3rem';
+    modalContent.style.textAlign= 'center';
+
+
+
+    var text = document.createElement('p'); 
+    text.style.flexGrow = '1'; 
+    text.style.display = 'flex'; 
+    text.style.justifyContent = 'center';
+    text.style.alignItems = 'center'; 
+    text.textContent = 'Great job! Now lets move on to next level.';
+    modalContent.appendChild(text);
+
+    var closeButton = document.createElement('button');
+    closeButton.textContent = 'Next >';
+    closeButton.style.alignSelf = 'center';
+    closeButton.style.width = '5vw';
+    closeButton.style.height = '2vw';
+    closeButton.style.fontWeight = '900';
+    closeButton.onclick = function() {
+      window.location.href = '2.html';
+    };
+    modalContent.appendChild(closeButton);
+
+    modal.appendChild(modalContent);
+
+    document.body.appendChild(modal);
+}
+
+              </script>
+           
+        </div>
+      
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+  <div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>

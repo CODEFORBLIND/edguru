@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Getting started with Java</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="icon" href="../logooo .jpg"  type="image/gif" sizes="64x64">
+
+
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Acme&family=Anta&display=swap');
+    html,
+    body {
+      position: relative;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #333333;
+      font-size: 14px;
+      color: #000;
+      font-family: 'Acme', sans-serif;
+    }
+
+    .swiper {
+      width: 100%;
+      /* height: calc(100% - 5px); Adjusted height to accommodate the navigation bar */
+      /* margin-top: 4vw; Added margin-top to create space for the navigation bar */
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+    }
+
+    /* .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      /* object-fit: cover; 
+    } */
+    
+    /* Navigation bar styles */
+    .navigation-bar {
+      font-size: 1.5vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 1.5vw;
+      box-sizing: border-box;
+      z-index: 1000; /* Ensure navigation bar appears above other content */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+     
+    }
+    
+    .navigation-bar div {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    
+    /* Adjusted progress bar styles */
+    .swiper-pagination {
+      /* height: 5vw; */
+      position: absolute;
+      bottom: 50px;
+      /* left: 50%; */
+      /* transform: translateX(-50%); */
+      width: auto;
+      display: flex;
+      margin-top: 5vw;
+      padding: 0.25vw 0;
+
+    }
+
+    #myForm{
+      text-align: start;
+      /* padding-left: 25vw; */
+      text-align: center;
+    }
+
+    .pbold{
+  font-weight: 800;
+}
+
+
+.fixed {
+  margin-left: 7vw;
+  border: 2px solid #867d7d;
+    /* padding: 30px; */
+    /* margin-right: 20px; */
+    height: 15vw;
+  width: 45vw;
+  }
+
+  </style>
+</head>
+
+<body>
+    
+  <!-- Navigation bar -->
+  <div class="navigation-bar">
+    <div style="height: 2vw; width: 2vw; background-color: #333;"><a href="./javacur.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></a></div>
+    <div>Getting started with Java</div>
+    <div style="height: 2vw; width: 2vw; background-color: #333;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#ffffff" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></div>
+  </div>
+    
+  <!-- Swiper -->
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+      <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">
+          <h1>Welcome to Java!</h1>
+          <p style="line-height: 3vw;">Java is one of the most popular programming languages.
+            Java's slogan is "Write once, run anywhere". Java programs can run on different platforms, including mobile, desktop, and other portable systems. You can use Java to build apps, games, banking applications, web apps, and much more!</p>
+          
+
+          </div>
+      </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">
+            <h1>Coding</h1>
+            <p style="line-height: 3vw;">
+              Humans use computer programs to communicate with machines. Without computer programs, we wouldn't have smartphones, websites, or even exploration in outer space.</p>
+            <div class="img1"><img src="https://lecontent.sololearn.com/material-images/a914db1197824c0bbe69426801aaf590-Frame%2027033.jpg" style="height: 20vw;"></div>
+            
+  
+            </div>
+        </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+            <p class="pbold">
+              What's a programming language?
+            </p>
+            <form id="myForm1">
+                <input type="radio" id="option1.1" name="options" value="option1">
+                <label for="option1" style="padding: 2vw;">A language used by machines to communicate with aliens</label><br><br>
+                <input type="radio" id="option1.2" name="options" value="option2">
+                <label for="option2" style="padding: 2vw;">A language used by humans to communicate with machines</label><br><br>
+                <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                <p id="suggestion" class="suggestion"></p>
+            </form>
+        
+            <script> 
+             document.getElementById('myForm1').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                    var suggestion = document.getElementById('suggestion');
+                    if (document.getElementById('option1.2').checked) {
+                        suggestion.textContent = "Qusetion Solved. Great Job!";
+                    } else {
+                        suggestion.textContent = 'Oops! Wrong answer.';
+                    }
+                });
+            </script>
+          
+        </div>
+      
+      </div>
+        <div class="swiper-slide">
+            <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+                <p  class="pbold">
+                  Notifications and text displayed on a screen are examples of outputs from computer programs
+                </p>
+                <form id="myForm2">
+                    <input type="radio" id="option2.1" name="options" value="option1">
+                    <label for="option1" style="padding: 0.5vw;">False</label><br><br>
+                    <input type="radio" id="option2.2" name="options" value="option2">
+                    <label for="option2" style="padding: 1vw;">True</label><br><br>
+                    <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                    <p id="suggestion2" class="suggestion2"></p>
+                </form>
+            
+                <script> 
+                 document.getElementById('myForm2').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    
+                        var suggestion2 = document.getElementById('suggestion2');
+                        if (document.getElementById('option2.2').checked) {
+                            suggestion2.textContent = "Question solved. Great Job!";
+                        } else {
+                            suggestion2.textContent = 'Oops! Wrong answer.';
+                        }
+                    });
+                </script>
+               
+            </div>
+          
+          </div>
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">
+          <p style="line-height: 3vw;" class="pbold">
+          <h1>Output</h1>
+            Coders use outputs all the time to check that the computer is following the given instructions and fix problems with code.
+            The following line of code displays Java's slogan on the screen as an output:</p>
+            <div class="fixed">
+              <div class="card" style="height: 3vw;">
+                <h3 >System.out.println("Write once, run anywhere!"); <br></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+            <p class="pbold">
+              Complete a line of code that outputs "Game Over".<br>
+              System.out.___("Game Over");
+            </p>
+            <form id="myForm3">
+                <input type="radio" id="option3.1" name="options" value="option1">
+                <label for="option3.1" style="padding: 0.5vw;">write</label><br><br>
+                <input type="radio" id="option3.2" name="options" value="option2">
+                <label for="option3.2" style="padding: 1vw;">println</label><br><br>
+            
+                <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                <p id="suggestion3" class="suggestion3"></p>
+            </form>
+        
+            <script> 
+             document.getElementById('myForm3').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                    var suggestion3 = document.getElementById('suggestion3');
+                    if (document.getElementById('option3.2').checked) {
+                        suggestion3.textContent = "Question solved. Great Job!";
+                    } else {
+                        suggestion3.textContent = 'Oops! Wrong answer.';
+                    }
+                });
+            </script>
+           
+        </div>
+      
+      </div>
+
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+            <p class="pbold">
+              The println instruction needs to be followed by parentheses.<br>System.out.println___
+              "You win!"___;
+            </p>
+            <form id="myForm4">
+                <input type="radio" id="option4.1" name="options" value="option1">
+                <label for="option4.1" style="padding: 0.25vw;">(  ,  )</label><br><br>
+                <input type="radio" id="option4.2" name="options" value="option2">
+                <label for="option4.2" style="padding: 1vw;">(  ,  (</label><br><br>
+                <input type="radio" id="option4.3" name="options" value="option3">
+                <label for="option4.3" style="padding: 1vw;">{  ,  }</label><br><br>
+                <input type="radio" id="option4.4" name="options" value="option4">
+                <label for="option4.4" style="padding: 1vw;">[  ,  ]</label><br><br>
+                <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+                <p id="suggestion4" class="suggestion4"></p>
+            </form>
+        
+            <script> 
+             document.getElementById('myForm4').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                    var suggestion4 = document.getElementById('suggestion4');
+                    if (document.getElementById('option4.1').checked) {
+                        suggestion4.textContent = "Question solved. Great Job!";
+                    } else {
+                        suggestion4.textContent = 'Oops! Wrong answer.';
+                    }
+                });
+            </script>
+           
+        </div>
+      
+      </div>
+
+      <div class="swiper-slide">
+        <div style="width: 60vw; margin-top: 7vw; font-size: 1.75vw;  ">  
+          <p class="pbold">
+            Create a line of code that runs without errors.
+            System.___.____("Great progress!");
+          </p>
+          <form id="myForm5">
+              <input type="radio" id="option5.1" name="options" value="option1">
+              <label for="option4.1" style="padding: 0.5vw;">println , out</label><br><br>
+              <input type="radio" id="option5.2" name="options" value="option2">
+              <label for="option4.2" style="padding: 1vw;">out , println </label><br><br>
+          
+              <input type="submit" value="Submit" style="background-color: #fe320a ; height: 3vw; width:6vw; font-size: 1.5vw; border-radius: 5px; margin-left: 1vw;">
+              <p id="suggestion5" class="suggestion5"></p>
+          </form>
+      
+          <script> 
+           document.getElementById('myForm5').addEventListener('submit', function(event) {
+              event.preventDefault();
+              
+                  var suggestio5 = document.getElementById('suggestion5');
+                  if (document.getElementById('option5.2').checked) {
+                      suggestion5.textContent = "Question solved. Great Job!";
+                      showModal();
+                  } else {
+                      suggestion5.textContent = 'Oops! Wrong answer.';
+                  }
+              });
+        
+
+function showModal() {
+    var modal = document.createElement('div');
+    modal.style.position = 'fixed';
+    modal.style.zIndex = '2'; // Increase the z-index
+    modal.style.left = '0';
+    modal.style.top = '0';
+    modal.style.width = '100%';
+    modal.style.height = '100%';
+    modal.style.overflow = 'auto';
+    modal.style.backgroundColor = 'rgba(0,0,0,0.4)';
+
+    var modalContent = document.createElement('div');
+    modalContent.style.backgroundColor = '#EFEAE3';
+    modalContent.style.margin = '15% auto';
+    modalContent.style.padding = '20px';
+    modalContent.style.border = '1px solid #888';
+    modalContent.style.width = '25%'; // Adjust this to change the size of the modal
+    modalContent.style.height = '25%'; // Adjust this to change the size of the modal
+    modalContent.style.display = 'flex';
+    modalContent.style.flexDirection = 'column';
+    modalContent.style.justifyContent = 'space-between';
+    modalContent.style.borderRadius = '5%';
+    modalContent.style.fontSize = '1.3rem';
+    modalContent.style.textAlign = 'center';
+
+    var text = document.createElement('p');
+    text.style.flexGrow = '1';
+    text.style.display = 'flex';
+    text.style.justifyContent = 'center';
+    text.style.alignItems = 'center';
+    text.textContent = 'Great job! Now let\'s move on to the next level.';
+    modalContent.appendChild(text);
+
+    var closeButton = document.createElement('button');
+    closeButton.textContent = 'Next →';
+    closeButton.style.alignSelf = 'center';
+    closeButton.style.width = '8vw';
+    closeButton.style.height = '2vw';
+    closeButton.style.fontWeight = '900';
+    closeButton.style.backgroundColor = '#fe320a';
+    closeButton.onclick = function () {
+        // Remove modal and iframe when Next button is clicked
+        modal.remove();
+        iframe.remove();
+        window.location.href = 'j2.html';
+    };
+    modalContent.appendChild(closeButton);
+
+    modal.appendChild(modalContent);
+
+    document.body.appendChild(modal);
+
+    // Adding iframe outside the modal
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://lottie.host/embed/3672ecd4-b6b9-4ab6-b384-2775f6f1fd5c/ZdfF5fCr5L.json';
+    iframe.style.position = 'fixed';
+    iframe.style.top = 'calc(30% - 20vh)'; // Adjust these values to position the iframe
+    iframe.style.left = 'calc(31% - 20vw)'; // Adjust these values to position the iframe
+    iframe.style.width = '80vw';
+    iframe.style.height = '80vh';
+    iframe.style.border = 'none';
+
+    iframe.style.zIndex = '1'; // Ensure iframe is above modal
+    document.body.appendChild(iframe);
+}
+
+            </script>
+ 
+         
+      </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+  
+  <!-- Pagination -->
+  <div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "progressbar",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>
